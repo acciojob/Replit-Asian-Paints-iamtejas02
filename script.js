@@ -1,4 +1,4 @@
-const changeBtn = document.getElementById('change_button');
+	const changeBtn = document.getElementById('change_button');
     const resetBtn = document.getElementById('reset');
     const gridItems = document.querySelectorAll('.grid-item');
 
