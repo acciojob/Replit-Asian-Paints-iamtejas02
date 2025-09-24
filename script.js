@@ -1,5 +1,5 @@
 	const changeBtn = document.getElementById('change_button');
-    const resetBtn = document.getElementById('reset');
+    const resetBtn = document.getElementById('Reset');
     const gridItems = document.querySelectorAll('.grid-item');
 
     function resetGrid() {
