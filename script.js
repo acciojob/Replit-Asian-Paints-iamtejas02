@@ -1,25 +1,19 @@
-	const changeBtn = document.getElementById('change_button');
-    const resetBtn = document.getElementById('Reset');
-    const gridItems = document.querySelectorAll('.grid-item');
+function cells() {
+  const arr = [];
+  for (let i = 1; i <= 9; i++) arr.push(document.getElementById(String(i)));
+  return arr;
+}
 
-    function resetGrid() {
-      gridItems.forEach(item => {
-        item.style.backgroundColor = 'transparent';
-      });
-    }
+function resetAll() {
+  cells().forEach((el) => (el.style.backgroundColor = "transparent"));
+}
 
-    changeBtn.addEventListener('click', () => {
-      const blockId = document.getElementById('block_id').value;
-      const colour = document.getElementById('colour_id').value;
+document.getElementById("change_button").addEventListener("click", () => {
+  const id = document.getElementById("block_id").value.trim();
+  const color = document.getElementById("colour_id").value.trim();
+  resetAll();
+  const cell = document.getElementById(id);
+  if (cell && color) cell.style.backgroundColor = color;
+});
 
-      resetGrid(); 
-
-      const block = document.getElementById(blockId);
-      if (block && colour) {
-        block.style.backgroundColor = colour;
-      } else {
-        alert("Enter valid block id (1-9) and a color!");
-      }
-    });
-
-    resetBtn.addEventListener('click', resetGrid);
+document.getElementById("reset_button").addEventListener("click", resetAll);
